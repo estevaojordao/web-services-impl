@@ -1,0 +1,58 @@
+<definitions
+	xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"
+	xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:wsp1_2="http://schemas.xmlsoap.org/ws/2004/09/policy"
+	xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+	xmlns:tns="http://chapterOne/" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns="http://schemas.xmlsoap.org/wsdl/" targetNamespace="http://chapterOne/"
+	name="TimeServerImplService">
+	<types />
+	<message name="getTimeAsString" />
+	<message name="getTimeAsStringResponse">
+		<part name="return" type="xsd:string" />
+	</message>
+	<message name="getTimeAsElapsed" />
+	<message name="getTimeAsElapsedResponse">
+		<part name="return" type="xsd:long" />
+	</message>
+	<portType name="TimeServer">
+		<operation name="getTimeAsString">
+			<input wsam:Action="http://chapterOne/TimeServer/getTimeAsStringRequest"
+				message="tns:getTimeAsString" />
+			<output wsam:Action="http://chapterOne/TimeServer/getTimeAsStringResponse"
+				message="tns:getTimeAsStringResponse" />
+		</operation>
+		<operation name="getTimeAsElapsed">
+			<input wsam:Action="http://chapterOne/TimeServer/getTimeAsElapsedRequest"
+				message="tns:getTimeAsElapsed" />
+			<output wsam:Action="http://chapterOne/TimeServer/getTimeAsElapsedResponse"
+				message="tns:getTimeAsElapsedResponse" />
+		</operation>
+	</portType>
+	<binding name="TimeServerImplPortBinding" type="tns:TimeServer">
+		<soap:binding transport="http://schemas.xmlsoap.org/soap/http"
+			style="rpc" />
+		<operation name="getTimeAsString">
+			<soap:operation soapAction="" />
+			<input>
+				<soap:body use="literal" namespace="http://chapterOne/" />
+			</input>
+			<output>
+				<soap:body use="literal" namespace="http://chapterOne/" />
+			</output>
+		</operation>
+		<operation name="getTimeAsElapsed">
+			<soap:operation soapAction="" />
+			<input>
+				<soap:body use="literal" namespace="http://chapterOne/" />
+			</input>
+			<output>
+				<soap:body use="literal" namespace="http://chapterOne/" />
+			</output>
+		</operation>
+	</binding>
+	<service name="TimeServerImplService">
+		<port name="TimeServerImplPort" binding="tns:TimeServerImplPortBinding">
+			<soap:address location="http://127.0.0.1/9876/ts" />
+		</port>
+	</service>
+</definitions>
