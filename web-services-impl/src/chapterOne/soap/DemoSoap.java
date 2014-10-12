@@ -20,7 +20,7 @@ import javax.xml.soap.SOAPMessage;
  * Classe responsável por imular um serviço sendo enviado e consumido.
  * Tem por objetivo montar um envolepe SOAP de envio e de resposta.
  * 
- * @author Gothicoil
+ * @author estevao.jordao
  * 
  */
 public class DemoSoap {
