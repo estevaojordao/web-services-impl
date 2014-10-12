@@ -16,6 +16,14 @@ import javax.xml.soap.SOAPException;
 import javax.xml.soap.SOAPHeader;
 import javax.xml.soap.SOAPMessage;
 
+/**
+ * Classe responsável por imular um serviço sendo enviado e consumido.
+ * 
+ * Tem por objetivo montar um envolepe SOAP de envio e de resposta.
+ * 
+ * @author Gothicoil
+ * 
+ */
 public class DemoSoap {
 
 	
