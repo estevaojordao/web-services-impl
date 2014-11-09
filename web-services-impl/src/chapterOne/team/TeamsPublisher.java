@@ -11,5 +11,6 @@ public class TeamsPublisher {
 		String url = "http://localhost:" + port + "/teams";
 		System.out.println("Publishing Teams on port " + port);
 		Endpoint.publish(url, new Teams());
+		System.out.println(url);
 	}
 }

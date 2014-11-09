@@ -1,19 +1,20 @@
 package chapterOne.example;
 
 import javax.jws.WebMethod;
+import javax.jws.WebResult;
 import javax.jws.WebService;
 import javax.jws.soap.SOAPBinding;
 import javax.jws.soap.SOAPBinding.Style;
 
 /**
- * A anotação @WebSercice indica que está é a SEI(Interface de Endpoint de Serviço)
+ * A anotaï¿½ï¿½o @WebSercice indica que estï¿½ ï¿½ a SEI(Interface de Endpoint de Serviï¿½o)
  * 
- * A anotação @WebMethod indica que cada método é uma operação de serviço.
+ * A anotaï¿½ï¿½o @WebMethod indica que cada mï¿½todo ï¿½ uma operaï¿½ï¿½o de serviï¿½o.
  * 
- * A anotação @SAOPBinding impacta na construção por-debaixo-dos-panos do
- * contrato de serviço, o documento WSDL
+ * A anotaï¿½ï¿½o @SAOPBinding impacta na construï¿½ï¿½o por-debaixo-dos-panos do
+ * contrato de serviï¿½o, o documento WSDL
  * 
- * Sytle.RPC é responsável por simplificar o contrato e tornar a implementação
+ * Sytle.RPC ï¿½ responsï¿½vel por simplificar o contrato e tornar a implementaï¿½ï¿½o
  * mais facil.
  * 
  * @author Gothicoil
@@ -24,8 +25,10 @@ import javax.jws.soap.SOAPBinding.Style;
 public interface TimeServer {
 
 	@WebMethod
+	  //coloca um tag de resposta, defautl Ã© return
 	String getTimeAsString();
 
 	@WebMethod
+	@WebResult(partName="time_response")
 	long getTimeAsElapsed();
 }
